@@ -10,14 +10,13 @@ function Scroll() {
   const swiperRef = useRef(null);
   const [topPosition, setTopPosition] = useState(20);
 
-  // Dynamically update the position of the buttons when Swiper is initialized or slides change
   useEffect(() => {
     if (swiperRef.current) {
       const lastSlide = swiperRef.current.swiper.slides[swiperRef.current.swiper.slides.length - 1];
       const slideHeight = lastSlide ? lastSlide.offsetHeight : 0;
-      setTopPosition(slideHeight + 20); // You can adjust the +20 for padding if needed
+      setTopPosition(slideHeight + 20);
     }
-  }, [swiperRef.current?.swiper?.activeIndex]); // Re-run on slide change
+  }, [swiperRef.current?.swiper?.activeIndex]);
 
   return (
     <div className="flex items-center justify-center h-screen bg-[#161616]">
@@ -80,7 +79,6 @@ function Scroll() {
           {[...Array(20)].map((_, index) => (
             <SwiperSlide key={index}>
               <div className="bg-[#181818] rounded-[15px] shadow-lg overflow-hidden relative max-w-full">
-                {/* Background Image */}
                 <div className="relative h-[270px]">
                   <img
                     src="/imagine-dragons.jpeg"
