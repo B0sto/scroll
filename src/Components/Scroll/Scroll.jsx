@@ -2,21 +2,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 function Scroll() {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const swiperRef = useRef(null);
-  const [topPosition, setTopPosition] = useState(20);
-
-  useEffect(() => {
-    if (swiperRef.current) {
-      const lastSlide = swiperRef.current.swiper.slides[swiperRef.current.swiper.slides.length - 1];
-      const slideHeight = lastSlide ? lastSlide.offsetHeight : 0;
-      setTopPosition(slideHeight + 20);
-    }
-  }, [swiperRef.current?.swiper?.activeIndex]);
 
   return (
     <div className="flex items-center justify-center h-screen bg-[#161616]">
