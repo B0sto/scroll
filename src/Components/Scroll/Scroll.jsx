@@ -3,6 +3,8 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import React, { useState, useRef } from "react";
+import "../styles/globals.css";
+
 
 function Scroll() {
   const [isBeginning, setIsBeginning] = useState(true);
